@@ -43,13 +43,14 @@ if not game_wid:
             --remove \
                 fullscreen]
 
-# Some games (and windows) set WM_HINTS to specify attributes like where to
-# place the window initially, a minimum size, a maximum size, and other goodies.
+# Some games (and windows) set WM_NORMAL_HINTS to specify attributes like where
+# to place the window initially, a minimum size, a maximum size, and other
+# goodies.
 # Many window managers will prevent a user from resizing a window if the resize
 # conflicts with the hints provided.
-# Instead of trying to update the relevant parts of WM_HINTS, just get rid of
-# them.
-![xprop -id @(game_wid) -remove WM_HINTS]
+# Instead of trying to update the relevant parts of WM_NORMAL_HINTS, just get
+# rid of them.
+![xprop -id @(game_wid) -remove WM_NORMAL_HINTS]
 
 # On the other hand, titlebar decorations are controlled by _MOTIF_WM_HINTS.
 # A specific value must bet set to indicate that titlebar decorations are to
